@@ -1,0 +1,131 @@
+.experienceSection {
+  padding: var(--spacing-12) 0;
+  background-color: var(--bg-color);
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Vertical line for the timeline */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.5rem;
+  width: 2px;
+  background-color: var(--border-color);
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: var(--spacing-8);
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline dot */
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: 1.15rem;
+  top: 0.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border: 2px solid var(--surface-color);
+  box-shadow: 0 0 0 4px var(--surface-hover);
+  z-index: 1;
+}
+
+.timelineContent {
+  background-color: var(--surface-color);
+  padding: var(--spacing-6) var(--spacing-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.timelineContent:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-color);
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.companyInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-8);
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.company {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.period {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-family: monospace;
+}
+
+.responsibilities {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.responsibilityItem {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: var(--spacing-2);
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.responsibilityItem::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 1rem;
+  }
+  
+  .timelineItem {
+    padding-left: 3rem;
+  }
+  
+  .timelineItem::before {
+    left: 0.65rem;
+  }
+  
+  .companyInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
